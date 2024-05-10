@@ -5,9 +5,9 @@ agent_image = 'defenseunicorns/zarf/agent'
 agent_image_tag = 'local'
 
 # Tag for the zarf injector binary to use
-injector_version = '0.33.2'
-injector_amd64_shasum = '84eb8a899e4400677338590410549e3d4e843b468043c0baabf0dedd925fc0f8'
-injector_arm64_shasum = '9dea4faa8f4bd528fc50bc9c4d123f58c0497fad5f669845a05b9fe4d80d2cfa'
+injector_version = 'v0.1.0'
+# injector_amd64_shasum = '84eb8a899e4400677338590410549e3d4e843b468043c0baabf0dedd925fc0f8'
+# injector_arm64_shasum = '9dea4faa8f4bd528fc50bc9c4d123f58c0497fad5f669845a05b9fe4d80d2cfa'
 
 
 # The image reference to use for the registry that Zarf deploys into the cluster
