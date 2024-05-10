@@ -15,8 +15,6 @@ strip = true
 name = "zarf-injector"
 version = "0.5.0"
 edition = "2021"
-rustflags = ["-C", "relocation-model=static", "-C", "strip=symbols"]
-
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
