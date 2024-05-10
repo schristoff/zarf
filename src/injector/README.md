@@ -79,7 +79,7 @@ the locally built injector image.
 ```
 
 In Zarf Root Directory, run `make init-package`, if you are running on an Apple Silicon
-be sure run `make init-package --ARCH=arm64`
+be sure run `make init-package ARCH=arm64`
 
 The init package will be built in `./build`. Take the name of the locally
 built init package (e.g. `zarf-init-arm64-v0.33.2-29-g139d8390.tar.zst`)
