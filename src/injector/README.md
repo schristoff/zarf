@@ -88,19 +88,14 @@ the locally built injector image.
         executable: true
 ```
 
-In Zarf Root Directory, run `make init-package`, if you are running on an Apple Silicon
-be sure run `make init-package ARCH=arm64`
-
-The init package will be built in `./build`. Take the name of the locally
-built init package (e.g. `zarf-init-arm64-v0.33.2-29-g139d8390.tar.zst`)
-and change the value of `initPackageName` in the [cmd/initalize](../../src/cmd/initialize.go)
-
+In Zarf Root Directory, run:
 ```
---- 		initPackageName := sources.GetInitPackageName()
-+++ 		initPackageName := "zarf-init-arm64-v0.33.2-29-g139d8390.tar.zst"
+zarf tools clear-cache
+make clean
+make && make init-package
 ```
 
-Run `make build` in Zarf Root Directory. That will build a local version of 
-Zarf in `/build`. You can now use it within the `/build` directory like such:
-`./zarf-mac-apple init --components git-server -l trace`
+If you are running on an Apple Silicon, add the `ARCH` flag:  `make init-package ARCH=arm64`
 
+This builds all artifacts within the `/build` directory. Running `zarf init` would look like:
+`.build/zarf-mac-apple init --components git-server -l trace`
