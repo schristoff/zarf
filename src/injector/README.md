@@ -59,6 +59,16 @@ echo "aarch64 binary size: $size_aarch64"
 
 ## Testing your injector
 
+Build your injector by following the steps above, or running one of the following:
+```
+make build-injector-linux
+
+## OR 
+## works on apple silicon 
+make cross-injector-linux 
+
+```
+
 Point the [zarf-registry/zarf.yaml](../../packages/zarf-registry/zarf.yaml) to
 the locally built injector image.
 
