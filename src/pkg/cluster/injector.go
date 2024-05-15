@@ -107,9 +107,9 @@ func (c *Cluster) StartInjectionMadness(ctx context.Context, tmpDir string, imag
 		spinner.Updatef("Attempting to bootstrap with the %s/%s", node, image)
 
 		// Make sure the pod is not there first
-		err = c.DeletePod(ZarfNamespaceName, "injector")
+		err = c.DeletePod(ctx, ZarfNamespaceName, "injector")
 		if err != nil {
-			message.Debug("could not delete pod injector: ", err)
+			message.Debug("could not delete pod injector:", err)
 		}
 
 		// Update the podspec image path and use the first node found
@@ -117,7 +117,7 @@ func (c *Cluster) StartInjectionMadness(ctx context.Context, tmpDir string, imag
 		pod, err := c.buildInjectionPod(node[0], image, payloadConfigmaps, sha256sum)
 		if err != nil {
 			// Just debug log the output because failures just result in trying the next image
-			message.Debug("error making injection pod: ", err)
+			message.Debug("error making injection pod:", err)
 			continue
 		}
 
